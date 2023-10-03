@@ -1,0 +1,37 @@
+.post {
+  width: 600px;
+}
+
+.post__body {
+  position: relative;
+  padding: 10px;
+}
+
+.post__footer {
+  &__split {
+    background: #d2d2d2;
+    height: 1px;
+    margin-top: var(--sm);
+    margin-bottom: var(--sm);
+  }
+}
+
+.post-section:not(:last-child) {
+  margin-bottom: var(--md);
+}
+
+.fade-in {
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.h-150 {
+  height: 150px;
+}
+
+.min-150 {
+  min-height: 150px;
+}

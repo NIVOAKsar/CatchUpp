@@ -1,0 +1,24 @@
+.post__actions {
+  font-size: 13px;
+  height: 20px;
+  display: flex;
+  max-width: 50%;
+}
+
+.post__actions__item {
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: var(--sm);
+  }
+
+  &:not(:last-child) {
+    margin-right: var(--lg);
+  }
+}
+
+.post__actions__icon {
+  height: 20px;
+  width: auto;
+}

@@ -1,0 +1,18 @@
+@use "../assets/utils.scss" as *;
+
+.post__header {
+  display: flex;
+  align-items: center;
+
+  &__texts {
+    flex-grow: 1;
+    font-size: 13px;
+    color: grey;
+    white-space: nowrap;
+    @include ellipsis;
+  }
+
+  p {
+    @include ellipsis;
+  }
+}

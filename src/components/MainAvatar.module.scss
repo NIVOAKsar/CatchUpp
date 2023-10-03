@@ -1,0 +1,22 @@
+@use "../assets/utils.scss" as *;
+
+.main-avatar {
+  background: var(--clr-pale);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
+}
+
+.fade-in {
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
