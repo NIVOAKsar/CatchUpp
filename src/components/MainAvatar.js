@@ -9,9 +9,15 @@ MainAvatar.defaultProps = {
 
 function MainAvatar(props) {
     const [showImage, setShowImage] = useState(false)
+    const [renderImage, setRenderImage] = useState(true)
+
 
     function onLoad() {
         setShowImage(() => true)
+    }
+
+    function onError() {
+        setRenderImage(() => false)
     }
 
     function stylesContainer() {
@@ -31,7 +37,7 @@ function MainAvatar(props) {
 
     return (
         <div className={classesContainer()} style={stylesContainer()} >
-            <img src={props.src} onLoad={onLoad} className={classesImage()} />
+            {renderImage && <img src={props.src} onLoad={onLoad} onError={onError} className={classesImage()} />}
         </div>
     )
 }

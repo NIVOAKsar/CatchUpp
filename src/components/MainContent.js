@@ -25,7 +25,7 @@ function MainContent() {
 
     const postsToRender = () => {
         return posts.map((post, idx) => {
-            return <Post avatar={post.avatar} content={post.content} author={post.fullName} creationTime={post.createdAt} className="mb-xl" key={idx} />
+            return <Post avatar={post.avatar} content={post.content} author={post.fullName} creationTime={post.createdAt} className="mb-xl" key={post.id} />
         })
     }
 

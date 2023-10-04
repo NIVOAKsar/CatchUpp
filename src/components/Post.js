@@ -23,9 +23,8 @@ Post.defaultProps = {
 
 function Post(props) {
 
-    useEffect(() => {
-        console.log(props);
-    }, [])
+    // useEffect(() => {
+    // }, [])
 
     const dateToPresent = () => {
         return moment(props.creationTime).format("dddd, DD MMMM YYYY [at] hh:mm");
