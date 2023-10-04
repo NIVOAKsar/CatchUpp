@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { Status } from 'src/services/utils';
+import { Status } from 'src/utils/utils';
 
 import styles from './Post.module.scss';
 

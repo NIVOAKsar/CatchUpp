@@ -4,5 +4,8 @@ export default {
     theme: {
         extend: {}
     },
-    plugins: []
+    plugins: [],
+    corePlugins: {
+        preflight: false // make sure tailwind default overrides won't work
+    }
 };

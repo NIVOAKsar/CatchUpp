@@ -1,11 +1,15 @@
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import MainHeader from './components/MainHeader';
-import MainContent from './components/MainContent';
+// import MainContent from './components/MainContent';
 
 function App() {
     return (
         <div className="App">
             <MainHeader />
-            <MainContent />
+            <Outlet />
+            {/* <MainContent /> */}
         </div>
     );
 }

@@ -1,50 +1,29 @@
 import React, { useState } from 'react';
-
 import styles from './MainAvatar.module.scss';
+
+import BaseImage from 'src/components/brand/BaseImage';
 
 MainAvatar.defaultProps = {
     src: null,
-    size: 32
+    size: 32,
+    onLoad: null,
+    onError: null
 };
 
 function MainAvatar(props) {
-    const [showImage, setShowImage] = useState(false);
-    const [renderImage, setRenderImage] = useState(true);
-
-    function onLoad() {
-        setShowImage(() => true);
-    }
-
-    function onError() {
-        setRenderImage(() => false);
-    }
-
-    function stylesContainer() {
-        return {
-            width: props.size + 'px',
-            height: props.size + 'px'
-        };
-    }
-
     function classesContainer() {
         return `${styles['main-avatar']} ${props.className}`;
     }
 
-    function classesImage() {
-        return `${styles['fade-in']} ${!showImage && styles.hidden}`;
-    }
-
     return (
-        <div className={classesContainer()} style={stylesContainer()}>
-            {renderImage && (
-                <img
-                    src={props.src}
-                    onLoad={onLoad}
-                    onError={onError}
-                    className={classesImage()}
-                />
-            )}
-        </div>
+        <BaseImage
+            width={props.size}
+            src={props.src}
+            useAspectRatio
+            className={classesContainer()}
+            onLoad={props.onLoad}
+            onError={props.onError}
+        ></BaseImage>
     );
 }
 
