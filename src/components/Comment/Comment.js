@@ -2,8 +2,8 @@ import React from 'react';
 
 import styles from './Comment.module.scss';
 
-import MainAvatar from './MainAvatar';
-import PostActions from './PostActions';
+import MainAvatar from 'src/components/MainAvatar/MainAvatar';
+import PostActions from 'src/components/PostActions/PostActions';
 
 Comment.defaultProps = {
     avatar: 'https://via.placeholder.com/32',

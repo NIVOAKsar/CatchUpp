@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './PostHeader.module.scss';
 
-import MainAvatar from './MainAvatar';
+import MainAvatar from 'src/components/MainAvatar';
 
 PostHeader.defaultProps = {
     avatar: null,

@@ -1,12 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { useEffect } from 'react';
-import styles from './MainContent.module.scss';
-import Post from './Post';
 import postsService from 'src/services/posts';
 
-MainContent.defaultProps = {};
+import styles from './ControllerFeed.module.scss';
 
-function MainContent() {
+import Post from 'src/components/Post';
+
+ControllerFeed.defaultProps = {};
+
+function ControllerFeed() {
     const [posts, setPosts] = useState([]);
     const elInput = useRef();
 
@@ -48,4 +50,4 @@ function MainContent() {
     );
 }
 
-export default MainContent;
+export default ControllerFeed;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import styles from './MainAvatar.module.scss';
 
 import BaseImage from 'src/components/brand/BaseImage';

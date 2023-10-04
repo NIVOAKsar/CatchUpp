@@ -1,8 +1,9 @@
 import React from 'react';
 
 import styles from './Comments.module.scss';
+import { cn } from 'src/utils/merge-css';
 
-import Comment from './Comment';
+import Comment from 'src/components/Comment';
 
 Comments.defaultProps = {};
 

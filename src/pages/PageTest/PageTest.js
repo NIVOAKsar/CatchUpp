@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './PageTest.module.scss';
 import BaseButton from 'src/components/brand/BaseButton';
 import BaseImage from 'src/components/brand/BaseImage';
-import MainAvatar from 'src/components/MainAvatar';
+import MainAvatar from 'src/components/MainAvatar/MainAvatar';
 
 function PageTest() {
     return (

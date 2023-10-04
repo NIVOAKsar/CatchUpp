@@ -4,11 +4,11 @@ import { Status } from 'src/utils/utils';
 
 import styles from './Post.module.scss';
 
-import PostHeader from './PostHeader';
-import PostActions from './PostActions';
-import PostActivity from './PostActivity';
-import Comments from './Comments';
-import ContentSkeleton from './ContentSkeleton';
+import PostHeader from 'src/components/PostHeader';
+import PostActions from 'src/components/PostActions';
+import PostActivity from 'src/components/PostActivity';
+import Comments from 'src/components/Comments';
+import ContentSkeleton from 'src/components/ContentSkeleton';
 
 Post.defaultProps = {
     status: Status.Success,

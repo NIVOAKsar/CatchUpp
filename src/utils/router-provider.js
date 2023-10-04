@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from 'src/App';
 import PageTest from 'src/pages/PageTest/PageTest';
 import ProfilePage from 'src/pages/ProfilePage';
-import MainContent from 'src/components/MainContent';
+import ControllerFeed from 'src/components/ControllerFeed';
 
 const routes = [
     {
@@ -13,7 +13,7 @@ const routes = [
         children: [
             {
                 path: '/',
-                element: <MainContent />
+                element: <ControllerFeed />
             },
             {
                 // path: '/profile/:id',

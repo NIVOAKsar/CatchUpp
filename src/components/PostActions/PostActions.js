@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './PostActions.module.scss';
+
 import ActionLike from 'src/assets/action-like.svg';
 import ActionComment from 'src/assets/action-comment.svg';
 import ActionShare from 'src/assets/action-share.svg';
