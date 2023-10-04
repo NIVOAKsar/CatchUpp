@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import styles from './PageTest.module.scss'
+import styles from './PageTest.module.scss';
 
 function PageTest() {
     const navigate = useNavigate();
