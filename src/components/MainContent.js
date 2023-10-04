@@ -1,33 +1,39 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef } from 'react';
 import { useEffect } from 'react';
-import styles from './MainContent.module.scss'
-import Post from './Post'
-import postsService from '../services/posts'
+import styles from './MainContent.module.scss';
+import Post from './Post';
+import postsService from 'src/services/posts';
 
-MainContent.defaultProps = {
-
-}
+MainContent.defaultProps = {};
 
 function MainContent() {
-    const [posts, setPosts] = useState([])
-    const elInput = useRef()
+    const [posts, setPosts] = useState([]);
+    const elInput = useRef();
 
     const loadPosts = async () => {
-        const data = await postsService.getPosts()
-        setPosts(() => data)
+        const data = await postsService.getPosts();
+        setPosts(() => data);
         console.log(data);
-    }
+    };
 
     useEffect(() => {
-        loadPosts()
-    }, [])
-
+        loadPosts();
+    }, []);
 
     const postsToRender = () => {
         return posts.map((post, idx) => {
-            return <Post avatar={post.avatar} content={post.content} author={post.fullName} creationTime={post.createdAt} className="mb-xl" key={post.id} />
-        })
-    }
+            return (
+                <Post
+                    avatar={post.avatar}
+                    content={post.content}
+                    author={post.fullName}
+                    creationTime={post.createdAt}
+                    className="mb-xl"
+                    key={post.id}
+                />
+            );
+        });
+    };
 
     // const onChangeNameClick = () => {
     //     setPosts(() => {
@@ -38,11 +44,8 @@ function MainContent() {
     // }
 
     return (
-        <section className={styles['main-content']}>
-            {postsToRender()}
-        </section>
-    )
+        <section className={styles['main-content']}>{postsToRender()}</section>
+    );
 }
 
-export default MainContent
-
+export default MainContent;

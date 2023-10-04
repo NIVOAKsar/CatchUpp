@@ -1,16 +1,12 @@
-import React from 'react'
-import { printObject } from "../services/utils";
+import React from 'react';
 
-import styles from './Comments.module.scss'
+import styles from './Comments.module.scss';
 
-import Comment from './Comment'
+import Comment from './Comment';
 
-Comments.defaultProps = {
-
-}
+Comments.defaultProps = {};
 
 function Comments(props) {
-
     return (
         <section className={`${styles.post__comments} ${props.className}`}>
             {/* Comments ... {printObject(props.comments)} */}
@@ -18,9 +14,8 @@ function Comments(props) {
             <Comment className="mb-md" />
             {/* <Comment className="mb-md" /> */}
             {/* <Comment className="mb-md" /> */}
-
         </section>
-    )
+    );
 }
 
-export default Comments
+export default Comments;

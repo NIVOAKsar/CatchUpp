@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './MainHeader.module.scss'
+import React from 'react';
+import styles from './MainHeader.module.scss';
 
 export default () => {
     return (
@@ -8,5 +8,5 @@ export default () => {
                 <p>CatchUpp</p>
             </div>
         </header>
-    )
-}
+    );
+};
