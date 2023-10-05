@@ -1,10 +1,13 @@
 import React from 'react';
 
 import styles from './PostActions.module.scss';
+import { cn } from 'src/utils/merge-css';
 
 import ActionLike from 'src/assets/action-like.svg';
 import ActionComment from 'src/assets/action-comment.svg';
 import ActionShare from 'src/assets/action-share.svg';
+
+import ActionButton from 'src/components/brand/ActionButton';
 
 PostActions.defaultProps = {
     disableLike: false,
@@ -13,34 +16,20 @@ PostActions.defaultProps = {
 };
 
 function PostActions(props) {
+    function classesContainer() {
+        return cn(styles.post__actions, props.className);
+    }
+
     return (
-        <div className={styles.post__actions}>
+        <div className={classesContainer()}>
             {!props.disableLike && (
-                <button className={styles.post__actions__item}>
-                    <img
-                        className={styles.post__actions__icon}
-                        src={ActionLike}
-                    />
-                    <span>Like</span>
-                </button>
+                <ActionButton label="Like" src={ActionLike} />
             )}
             {!props.disableComment && (
-                <button className={styles.post__actions__item}>
-                    <img
-                        className={styles.post__actions__icon}
-                        src={ActionComment}
-                    />
-                    <span>Comment</span>
-                </button>
+                <ActionButton label="Comment" src={ActionComment} />
             )}
             {!props.disableShare && (
-                <button className={styles.post__actions__item}>
-                    <img
-                        className={styles.post__actions__icon}
-                        src={ActionShare}
-                    />
-                    <span>Share</span>
-                </button>
+                <ActionButton label="Share" src={ActionShare} />
             )}
         </div>
     );

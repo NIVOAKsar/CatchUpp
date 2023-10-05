@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useEffect } from 'react';
+import { cn } from 'src/utils/merge-css';
 import postsService from 'src/services/posts';
 
 import styles from './ControllerFeed.module.scss';
@@ -11,6 +12,10 @@ ControllerFeed.defaultProps = {};
 function ControllerFeed() {
     const [posts, setPosts] = useState([]);
     const elInput = useRef();
+
+    function classesContainer() {
+        return cn(styles['controller-feed'], 'px-80 py-5');
+    }
 
     const loadPosts = async () => {
         const data = await postsService.getPosts();
@@ -45,9 +50,7 @@ function ControllerFeed() {
     //     })
     // }
 
-    return (
-        <section className={styles['main-content']}>{postsToRender()}</section>
-    );
+    return <section className={classesContainer()}>{postsToRender()}</section>;
 }
 
 export default ControllerFeed;

@@ -8,8 +8,12 @@ import Comment from 'src/components/Comment';
 Comments.defaultProps = {};
 
 function Comments(props) {
+    function classesContiner() {
+        return cn(styles.post__comments, props.className);
+    }
+
     return (
-        <section className={`${styles.post__comments} ${props.className}`}>
+        <section className={classesContiner()}>
             {/* Comments ... {printObject(props.comments)} */}
 
             <Comment className="mb-md" />

@@ -9,6 +9,7 @@ import PostActions from 'src/components/PostActions';
 import PostActivity from 'src/components/PostActivity';
 import Comments from 'src/components/Comments';
 import ContentSkeleton from 'src/components/ContentSkeleton';
+import { cn } from 'src/utils/merge-css';
 
 Post.defaultProps = {
     status: Status.Success,
@@ -32,7 +33,7 @@ function Post(props) {
     };
 
     function classesContainer() {
-        return `${styles.post} ${props.className}`;
+        return cn(styles.post, props.className);
     }
 
     function classesBody() {
@@ -70,7 +71,7 @@ function Post(props) {
             <section className={classesFooter()}>
                 <PostActions />
                 <div className={styles.post__footer__split} />
-                <PostActivity />
+                <PostActivity likes={props.likesAmount} />
             </section>
             <Comments className={styles['post-section']} />
         </section>

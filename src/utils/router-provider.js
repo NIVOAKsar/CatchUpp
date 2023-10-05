@@ -2,7 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 // Components
 import App from 'src/App';
-import PageTest from 'src/pages/PageTest/PageTest';
+import PageDemo from 'src/pages/PageDemo';
 import ProfilePage from 'src/pages/ProfilePage';
 import ControllerFeed from 'src/components/ControllerFeed';
 
@@ -31,8 +31,8 @@ const routes = [
 
 if (import.meta.env.DEV) {
     routes.push({
-        path: '/test',
-        element: <PageTest />
+        path: '/demo',
+        element: <PageDemo />
     });
 }
 

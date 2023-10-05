@@ -11,8 +11,8 @@ BaseButton.defaultProps = {
 function BaseButton({ onClick, children, className }) {
     function classesContainer() {
         return cn(
-            'bg-green-300 rounded px-2 py-1 hover:bg-green-400 active:bg-green-500 transition-hover cursor-pointer',
-            styles['base-button'],
+            'bg-green-300 rounded px-2 py-1 hover:bg-green-400 active:bg-green-500 transition-hover',
+            styles['base-btn'],
             className
         );
     }
