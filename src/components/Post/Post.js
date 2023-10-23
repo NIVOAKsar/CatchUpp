@@ -12,70 +12,68 @@ import ContentSkeleton from 'src/components/ContentSkeleton';
 import { cn } from 'src/utils/merge-css';
 
 Post.defaultProps = {
-    status: Status.Success,
-    author: 'Niv Saar',
-    creationTime: '2 days ago',
-    content:
-        'content content content content content content content content content content ...',
-    likesAmount: 12,
-    comments: [],
-    avatar: 'https://via.placeholder.com/40'
+  status: Status.Success,
+  author: 'Niv Saar',
+  creationTime: '2 days ago',
+  content:
+    'content content content content content content content content content content ...',
+  likesAmount: 12,
+  comments: [],
+  avatar: 'https://via.placeholder.com/40'
 };
 
 function Post(props) {
-    // useEffect(() => {
-    // }, [])
+  // useEffect(() => {
+  // }, [])
 
-    const dateToPresent = () => {
-        return moment(props.creationTime).format(
-            'dddd, DD MMMM YYYY [at] hh:mm'
-        );
-    };
+  const dateToPresent = () => {
+    return moment(props.creationTime).format('dddd, DD MMMM YYYY [at] hh:mm');
+  };
 
-    function classesContainer() {
-        return cn(styles.post, props.className);
-    }
+  function classesContainer() {
+    return cn(styles.post, props.className);
+  }
 
-    function classesBody() {
-        // ${styles['min-150']}
-        return `${styles.post__body} ${styles['post-section']} mb-md`;
-    }
+  function classesBody() {
+    // ${styles['min-150']}
+    return `${styles.post__body} ${styles['post-section']} mb-md`;
+  }
 
-    function classesSkeleton() {
-        return `${styles['fade-in']} ${styles['h-150']} ${
-            props.status === Status.Success && styles.hidden
-        }`;
-    }
+  function classesSkeleton() {
+    return `${styles['fade-in']} ${styles['h-150']} ${
+      props.status === Status.Success && styles.hidden
+    }`;
+  }
 
-    function classesFooter() {
-        return `${styles.post__footer} ${styles['post-section']}`;
-    }
+  function classesFooter() {
+    return `${styles.post__footer} ${styles['post-section']}`;
+  }
 
-    return (
-        <section className={classesContainer()}>
-            <PostHeader
-                className="mb-md"
-                avatar={props.avatar}
-                author={props.author}
-                date={dateToPresent()}
-            />
-            <section className={classesBody()}>
-                {props.status !== Status.Success ? (
-                    <ContentSkeleton className={classesSkeleton()} />
-                ) : (
-                    <p>{props.content}</p>
-                )}
-                {/* <p>{props.content}</p> */}
-                {/* <ContentSkeleton className={classesSkeleton()} /> */}
-            </section>
-            <section className={classesFooter()}>
-                <PostActions />
-                <div className={styles.post__footer__split} />
-                <PostActivity likes={props.likesAmount} />
-            </section>
-            <Comments className={styles['post-section']} />
-        </section>
-    );
+  return (
+    <section className={classesContainer()}>
+      <PostHeader
+        className="mb-md"
+        avatar={props.avatar}
+        author={props.author}
+        date={dateToPresent()}
+      />
+      <section className={classesBody()}>
+        {props.status !== Status.Success ? (
+          <ContentSkeleton className={classesSkeleton()} />
+        ) : (
+          <p>{props.content}</p>
+        )}
+        {/* <p>{props.content}</p> */}
+        {/* <ContentSkeleton className={classesSkeleton()} /> */}
+      </section>
+      <section className={classesFooter()}>
+        <PostActions />
+        <div className={styles.post__footer__split} />
+        <PostActivity likes={props.likesAmount} />
+      </section>
+      <Comments className={styles['post-section']} />
+    </section>
+  );
 }
 
 export default Post;

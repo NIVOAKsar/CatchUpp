@@ -6,11 +6,11 @@ import { cn } from 'src/utils/merge-css';
 Component.defaultProps = {};
 
 function Component(props) {
-    function containerClasses() {
-        return cn(styles.container);
-    }
+  function containerClasses() {
+    return cn(styles.container);
+  }
 
-    return <div className={containerClasses()}></div>;
+  return <div className={containerClasses()}></div>;
 }
 
 export default Component;

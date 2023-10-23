@@ -10,29 +10,25 @@ import ActionShare from 'src/assets/action-share.svg';
 import ActionButton from 'src/components/brand/ActionButton';
 
 PostActions.defaultProps = {
-    disableLike: false,
-    disableComment: false,
-    disableShare: false
+  disableLike: false,
+  disableComment: false,
+  disableShare: false
 };
 
 function PostActions(props) {
-    function classesContainer() {
-        return cn(styles.post__actions, props.className);
-    }
+  function classesContainer() {
+    return cn(styles.post__actions, props.className);
+  }
 
-    return (
-        <div className={classesContainer()}>
-            {!props.disableLike && (
-                <ActionButton label="Like" src={ActionLike} />
-            )}
-            {!props.disableComment && (
-                <ActionButton label="Comment" src={ActionComment} />
-            )}
-            {!props.disableShare && (
-                <ActionButton label="Share" src={ActionShare} />
-            )}
-        </div>
-    );
+  return (
+    <div className={classesContainer()}>
+      {!props.disableLike && <ActionButton label="Like" src={ActionLike} />}
+      {!props.disableComment && (
+        <ActionButton label="Comment" src={ActionComment} />
+      )}
+      {!props.disableShare && <ActionButton label="Share" src={ActionShare} />}
+    </div>
+  );
 }
 
 export default PostActions;

@@ -1,18 +1,17 @@
-
 .action-btn {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    img {
-        margin-right: var(--sm);
-    }
+  img {
+    margin-right: var(--sm);
+  }
 
-    &:not(:last-child) {
-        margin-right: var(--lg);
-    }
+  &:not(:last-child) {
+    margin-right: var(--lg);
+  }
 }
 
 .action-btn__icon {
-    height: 20px;
-    width: auto;
+  height: 20px;
+  width: auto;
 }

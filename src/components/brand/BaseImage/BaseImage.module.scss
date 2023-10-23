@@ -1,19 +1,19 @@
 @use 'src/assets/utils.scss' as *;
 
 .base-image {
-    background: var(--clr-pale);
+  background: var(--clr-pale);
 
-    img {
-        width: inherit;
-        height: inherit;
-        border-radius: inherit;
-    }
+  img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+  }
 }
 
 .fade-in {
-    transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .hidden {
-    opacity: 0;
+  opacity: 0;
 }

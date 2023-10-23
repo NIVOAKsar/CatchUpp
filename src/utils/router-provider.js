@@ -7,39 +7,37 @@ import ProfilePage from 'src/pages/ProfilePage';
 import ControllerFeed from 'src/components/ControllerFeed';
 
 const routes = [
-    {
-        path: '',
-        element: <App />,
-        children: [
-            {
-                path: '/',
-                element: <ControllerFeed />
-            },
-            {
-                // path: '/profile/:id',
-                path: '/profile',
-                element: <ProfilePage />
-            }
-        ]
-    },
-    {
-        // path: '/:catchAll(.*)*',
-        path: '*',
-        element: <div>Error Page Not Found!</div>
-    }
+  {
+    path: '',
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <ControllerFeed />
+      },
+      {
+        // path: '/profile/:id',
+        path: '/profile',
+        element: <ProfilePage />
+      }
+    ]
+  },
+  {
+    // path: '/:catchAll(.*)*',
+    path: '*',
+    element: <div>Error Page Not Found!</div>
+  }
 ];
 
 if (import.meta.env.DEV) {
-    routes.push({
-        path: '/demo',
-        element: <PageDemo />
-    });
+  routes.push({
+    path: '/demo',
+    element: <PageDemo />
+  });
 }
 
 function routerProvider() {
-    return (
-        <RouterProvider router={createBrowserRouter(routes)}></RouterProvider>
-    );
+  return <RouterProvider router={createBrowserRouter(routes)}></RouterProvider>;
 }
 
 export default routerProvider;
